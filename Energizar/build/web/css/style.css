@@ -1,0 +1,146 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 29 de set. de 2022, 14:37:06
+    Author     : Fabio
+*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(133, 193, 233);
+    width: 100%;
+    position: fixed;
+}
+
+li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: rgb(1,0,1);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+/*.active {
+    background-color: #04AA6D;
+}*/
+
+div, img {
+    width: 100%;
+    height: 20%;
+    margin: 0;
+    /*display: block;*/
+}
+header{
+    /*width: 100%;*/
+}
+
+.section-title{
+    font-size: 32px;
+    color: #111;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+}
+.section-title-divider{
+    width: 50px;
+    height: 3px;
+    background: #03C4EB;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.descricao{
+    text-align: center;
+    margin-bottom: 40px;
+}
+p{
+    padding: 0;
+    margin: 30px;
+}
+figure{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+.video{
+    text-align: center;
+}
+.calculocss{
+    text-align: center;
+}
+
+
+.secaoform{
+    /*background: rgb(133, 193, 233);*/
+    /*border-radius: 20px;*/
+    padding: 50px;
+    width: 400px;
+    margin: auto;   
+    /*box-shadow: 3px 3px 3px rgb(128, 139, 223);*/
+}
+.imgcalcule {
+    width: 100%;
+    height: 20%;
+    margin: 0;
+    /*position: relative;*/
+    border-radius: 250px;
+}
+.imagemCalcule{
+    background: black;
+    width: 40%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+   border-radius: 250px;
+}
+
+.butonCalcule{
+    position: absolute;
+    left: 540px;
+    width: 200px;
+    height: 100px;
+    margin: 200px 0 0 5px;
+    border-radius: 50px;
+    text-align: center;
+    
+}
+
+#button{
+    display: block;
+}
+.login{
+    margin-left: 50%;
+}
+
+/* css da pagina calcularOrcamento  */
+.hidden{
+    display:none;
+}
+
+.formCalcule{
+    background: #00FFFF;
+    width: 50%;
+    height: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
