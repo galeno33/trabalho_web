@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link rel="stylesheet" href="css/style.css"/>
+        <title>Orçamento</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"><!--ferramenta usada do bootstrap -->
        
     </head>
@@ -14,14 +14,17 @@
                 <a href="index.html">Home</a>
             </li>
             <li>
-                <a href="#quemsomos">Quem somos</a>
+                <a href="index.html#quemsomos">Quem somos</a>
             </li>
             <li>
-                <a href="#oquefazemos">O que fazemos</a>
+                <a href="index.html#oquefazemos">O que fazemos</a>
             </li>
             <li>
-                <a href="#orcamento">Orçamento</a>
+                <a href="index.html#orcamento">Faça seu Orçamento</a>
             </li> 
+            <li class="login">
+                <a  href="login.html">Entrar</a>
+            </li>
         </ul>
         <div class="row">
             <div id="orcamento">
@@ -31,9 +34,28 @@
                         <h3 class="calculocss">Seu orçamento</h3>
                         <section class="formCalcule">
                             
-                                <form action="#">
-                                    <div class="mb-4 col-md-4">
-                                      <label for="seuConsumo" class="form-grup">Seu consumo</label>
+                                <form action="#" method="POST">
+                                   
+                                    <div class="mb-3 col-md-10">
+                                        <label class="form-label">Nome</label>
+                                        <input type="text" class="form-control" id="nome">
+                              
+                                    </div>
+                                    
+                                    <div class="mb-3 col-md-10">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email">
+                              
+                                    </div>
+                                    
+                                    <div class="col-4">
+                                        <label class="form-label" for="phone">Telefone:</label>
+                                        <input class="form-control" type="tel" id="phone" name="phone" pattern="[8-9]{2}-[0-9]{9}"
+                                               required>
+                                    </div>
+                                    
+                                    <div class="col-4">
+                                      <label for="seuConsumo" class="form-label">Seu consumo Medio KWh:</label>
                                       <input type="number" class="form-control" id="seuConsumo" placeholder="Digite seu Kwh" name="seuConsum">
                                     </div>
                                     
@@ -41,13 +63,14 @@
                                     
                                     <br>
                                     
+                                   
                                     <input type="button" value="Continuar" class="btn btn-primary" onclick="mostrar()"/>
                                     <!--<button id="formulario">Continuar</button>--> <!-- acionar o formulario invisivel -->
                                     
                                     <div id="formulario" class="hidden">
                                         
                                         <label for="sel1" class="form-label">Novo Aparelho:</label>
-                                        <select class="form-select col-md-4" id="sel1" name="selecionar">
+                                        <select class="form-select col" id="sel1" name="selecionar">
                                           <option>Selecionar</option>
                                           <option>tv</option>
                                           <option>Geladeira</option>
@@ -57,6 +80,16 @@
                                         
                                         
                                         <br>
+                                        <div class="mb-3 col-md-10">
+                                            <label for="textarea">Observação</label>
+                                            <textarea class="form-control " id="textarea" placeholder="Digite suas observações" required></textarea>
+                                            <div class="invalid-feedback">
+                                              Digite suas observações
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        
                                         <!--<div class="mb-3 col-md-3">
                                           <label for="fone" class="form-grup">Telefone:</label>
                                           <input type="tel" class="form-control" id="phone" name="fone" placeholder="910101010" size="9" required>
@@ -66,9 +99,11 @@
                                           <input type="email" class="form-control" id="phone" name="email" placeholder="fulanodetal@fulandodetal.com" required>
                                         </div>-->
 
-                                        <button type="submit" class="btn btn-primary">Calcular</button>
-                                        <a href="#" type="button" class="btn btn-primary">Calculando</a>
-                                    </div>    
+                                        <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+                                        <!--<a href="#" type="button" class="btn btn-primary">Calculando</a>-->
+                                    </div>   
+                                    
+                                    <!--<button type="submit" class="btn btn-primary">Quero Orçamento</button>-->
                                 </form>
                             
                         </section>
