@@ -13,10 +13,11 @@ public class conexaoDAO {
         
         
         try{
-            
+            String url = "jdbc:mysql://localhost:3306/mrfsolarBD?user=root&password=";
         } catch(Exception e){
-            
+                        
         }
+        return null;
         
     }
 }

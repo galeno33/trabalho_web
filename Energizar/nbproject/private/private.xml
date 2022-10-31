@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/galeno/NetBeansProjects/Energizar/web/css/style.css</file>
-            <file>file:/home/galeno/NetBeansProjects/Energizar/web/calcularOrcamento.html</file>
-            <file>file:/home/galeno/NetBeansProjects/Energizar/web/index.html</file>
-            <file>file:/home/galeno/NetBeansProjects/Energizar/web/cadastrar.html</file>
-            <file>file:/home/galeno/NetBeansProjects/Energizar/web/login.html</file>
-            <file>file:/home/galeno/NetBeansProjects/Energizar/web/js/visualizaSenha.js</file>
+            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/web/index.html</file>
+            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/src/java/pacoteServlet/Servlet.java</file>
+            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/web/cadastro.html</file>
+            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/web/style.css</file>
+            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/src/java/packageDAO/conexaoDAO.java</file>
+            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/web/calcularConsumo.jsp</file>
+            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/web/calcularOrcamento.html</file>
         </group>
     </open-files>
 </project-private>
