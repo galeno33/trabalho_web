@@ -28,39 +28,38 @@
                 <div class="container mt-3 secaoform col-5 col-md-4">
                         <h3 class="calculocss">CADASTRO</h3>
                         
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome">
-                              
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Telefone</label>
-                            <input type="fone" class="form-control" id="fone">
-                              
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email">
-                              
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="senha">
-                        </div>
-                       
-                        <div class="mb-3">
-                            <label class="form-label">Confirmar Senha</label>
-                            <input type="password" class="form-control" id="confirme">
-                        </div>
-                        
-                         <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha
-                         <br>
-                         
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
-                        
-                        
-                    </form>
+                        <!-- formulario responsavel por cadastrar informações do usuario no banco de dados -->
+                        <form action="confirmacaoCadastro.jsp" method="post">
+                            <div class="mb-3">
+                                <label class="form-label">Nome</label>
+                                <input type="text" name="nomeUsuario" class="form-control" id="nome">
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Telefone</label>
+                                <input type="tel" name="foneUsuario" class="form-control" id="fone">
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="emailUsuario" class="form-control" id="email">
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Senha</label>
+                                <input type="password" name="senhaUsuario" class="form-control" id="senha">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Confirmar Senha</label>
+                                <input type="password" name="senhaConfirme" class="form-control" id="confirme">
+                            </div>
+
+                             <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha
+                             <br>
+
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </form>
                         
                         
                         

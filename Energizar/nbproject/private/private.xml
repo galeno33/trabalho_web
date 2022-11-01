@@ -6,8 +6,10 @@
             <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/web/index.html</file>
             <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/src/java/pacoteServlet/Servlet.java</file>
             <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/web/cadastro.html</file>
-            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/web/style.css</file>
+            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/src/java/packageCRUD/Orcamento.java</file>
+            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/src/java/packageDAO/InsertDAO.java</file>
             <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/src/java/packageDAO/conexaoDAO.java</file>
+            <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/src/java/packageCRUD/CadastroUsuario.java</file>
             <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/web/calcularConsumo.jsp</file>
             <file>file:/C:/Users/Fabio/Documents/NetBeansProjects/Energizar/web/calcularOrcamento.html</file>
         </group>

@@ -10,8 +10,9 @@ public class InsertDAO {
     Connection conn;
     PreparedStatement pstm;
     
+    //metodo para inserir no banco de dados os parametros do cadastro de usuarios
     public void insertUsuario(CadastroUsuario objCadastroUsuario) throws ClassNotFoundException{
-        
+        //a String sql chama o comando sql de inntroduzir no banco de dados as informmações entre parentese
         String sql = "insert into usuario (nome_usuario, fone_usuario, email_usuario, senha_usuario) value (?, ?, ?, ?)";
         conn = new conexaoDAO().conexaoBD();
         

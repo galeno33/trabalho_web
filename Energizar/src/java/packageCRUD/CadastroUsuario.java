@@ -1,19 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package packageCRUD;
 
-/**
- *
- * @author Fabio
- */
 public class CadastroUsuario {
     
     private String nome_usuario;
     private int fone_usuario;
     private String email_usuario;
     private int senha_usuario;
+    private int senha_confirme;
+    
+    public int getSenha_confirme() {
+        return senha_confirme;
+    }
+
+    public void setSenha_confirme(int senha_confirme) {
+        this.senha_confirme = senha_confirme;
+    }
+    
 
     public String getNome_usuario() {
         return nome_usuario;
