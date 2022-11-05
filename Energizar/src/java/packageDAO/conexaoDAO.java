@@ -11,16 +11,23 @@ import java.sql.SQLException;
  */
 public class conexaoDAO {
     
-    public Connection conexaoBD() throws ClassNotFoundException{
+    public static Connection conexaoBD() throws SQLException{
         
         Connection conn = null;
         
         try{
+            
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/mrfsolarBD?user=root&password=";
+            System.out.println("Conectado");
+            //linkar a url do servidor do banco de dados
+            String url = "jdbc:mysql://localhost:3306/mrfsolarbd?user=root&password=";
             conn = DriverManager.getConnection(url);
-        } catch(ClassNotFoundException | SQLException e){
-                        
+            
+        } catch(SQLException e){
+            throw new SQLException(e);    
+                   
+        }catch(ClassNotFoundException el){
+            throw new SQLException(el);
         }
         return conn;
         

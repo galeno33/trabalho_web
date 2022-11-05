@@ -9,6 +9,7 @@ public class CadastroUsuario {
     private int senha_usuario;
     private int senha_confirme;
     
+    
     public int getSenha_confirme() {
         return senha_confirme;
     }

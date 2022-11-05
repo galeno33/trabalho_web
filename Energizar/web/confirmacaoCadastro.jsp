@@ -14,31 +14,31 @@
         <title>JSP Page</title>
     </head>
     
-        
+    <body>
         <%   
             
             try{
                 //instancia de objeto da calsse CadastroUsuario
-                CadastroUsuario objetoCadastrando = new CadastroUsuario();
+                CadastroUsuario objCadastroUsuario = new CadastroUsuario();
                 //setando informações do documento html cadastrar
-                objetoCadastrando.setNome_usuario(request.getParameter("nomeUsuario"));
-                objetoCadastrando.setFone_usuario(request.getIntHeader("foneUsuario"));//pesquisar se o get é esse mesmo
-                objetoCadastrando.setEmail_usuario(request.getParameter("emailUsuario"));
-                objetoCadastrando.setSenha_usuario(request.getIntHeader("senhaUsuario"));
-                objetoCadastrando.setSenha_confirme(request.getIntHeader("senhaConfirme"));
+                objCadastroUsuario.setNome_usuario(request.getParameter("nomeUsuario"));
+                objCadastroUsuario.setFone_usuario(request.getIntHeader("foneUsuario"));//pesquisar se o get é esse mesmo
+                objCadastroUsuario.setEmail_usuario(request.getParameter("emailUsuario"));
+                objCadastroUsuario.setSenha_usuario(request.getIntHeader("senhaUsuario"));
+                objCadastroUsuario.setSenha_confirme(request.getIntHeader("senhaConfirme"));
 
                 //condicional de confirmação se a senha digitada é igual a senha de confirmação
-                if(objetoCadastrando.getSenha_confirme() == objetoCadastrando.getSenha_confirme()){
+                //if(objCadastroUsuario.setSenha_usuario(int senha_usuario) == objCadastroUsuario.setSenha_confirme(int senha_confirme)){
 
                         //instacia do objeto da classe insertDAO 
                         InsertDAO objetoInserido = new InsertDAO();
-                        objetoInserido.insertUsuario(objetoCadastrando);
+                        objetoInserido.insertUsuario(objCadastroUsuario);
                         
                         //--------------------- A IMPLEMENTAR --------------------//
                         //confirmação do cadastramento com sucesso
                         
                         
-                }
+                //}
                 
              
             }catch (Exception e){

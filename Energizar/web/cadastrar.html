@@ -29,7 +29,7 @@
                         <h3 class="calculocss">CADASTRO</h3>
                         
                         <!-- formulario responsavel por cadastrar informações do usuario no banco de dados -->
-                        <form action="confirmacaoCadastro.jsp" method="post">
+                        <form action="ServletControler" method="post">
                             <div class="mb-3">
                                 <label class="form-label">Nome</label>
                                 <input type="text" name="nomeUsuario" class="form-control" id="nome">
@@ -50,10 +50,10 @@
                                 <input type="password" name="senhaUsuario" class="form-control" id="senha">
                             </div>
 
-                            <div class="mb-3">
+                            <!--<div class="mb-3">
                                 <label class="form-label">Confirmar Senha</label>
                                 <input type="password" name="senhaConfirme" class="form-control" id="confirme">
-                            </div>
+                            </div>-->
 
                              <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha
                              <br>
