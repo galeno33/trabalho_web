@@ -15,14 +15,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import packageCRUD.CadastroProdutos;
 import packageCRUD.CadastroUsuario;
 import packageDAO.InsertDAO;
 
-/**
- *
- * @author Fabio
- */
-@WebServlet(name = "ServletControler", urlPatterns = {"/ServletControler"})
+@WebServlet(name = "ServletControler", urlPatterns = {"/ServletControler", "/ControlerProduto", "/ControlerUsuario"})
 public class ServletControler extends HttpServlet {
 
     /**
@@ -92,38 +89,81 @@ public class ServletControler extends HttpServlet {
             out.println("</html>");
         }*/
         
-        try {
-                //instancia de objeto da calsse CadastroUsuario
-                CadastroUsuario objCadastroUsuario = new CadastroUsuario();
-                //setando informações do documento html cadastrar
-                objCadastroUsuario.setNome_usuario(request.getParameter("nomeUsuario"));
-                objCadastroUsuario.setFone_usuario(Integer.parseInt(request.getParameter("foneUsuario")));//pesquisar se o get é esse mesmo
-                objCadastroUsuario.setEmail_usuario(request.getParameter("emailUsuario"));
-                objCadastroUsuario.setSenha_usuario(Integer.parseInt(request.getParameter("senhaUsuario")));
-                //objCadastroUsuario.setSenha_confirme(Integer.parseInt(request.getParameter("senhaConfirme")));
-
-                //condicional de confirmação se a senha digitada é igual a senha de confirmação
-                //if(objCadastroUsuario.setSenha_usuario(int senha_usuario) == objCadastroUsuario.setSenha_confirme(int senha_confirme)){
-
-                        //instacia do objeto da classe insertDAO 
-                        InsertDAO objetoInserido = new InsertDAO();
-                        
-            //enviar a informação obtida pelo getParameter para  a classe insertDAO, e aplicar o metodo insertBD()
-            objetoInserido.insertUsuario(objCadastroUsuario);
-            
-            //--------------------- A IMPLEMENTAR --------------------//
-            //confirmação do cadastramento com sucesso
-            out.println("<h2>usuario cadastrado com sucesso!</h2>");
-            
-            //}
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServletControler.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(ServletControler.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        String action = request.getServletPath();
         
-    }
+            //executar a inserção dos dados da pagina produtos.html para o banco de dados
+            if(action.equals("/ControlerUsuario")){
+                try {
+                        //instancia de objeto da calsse CadastroUsuario
+                        CadastroUsuario objCadastroUsuario = new CadastroUsuario();
+                        //setando informações do documento html cadastrar
+                        objCadastroUsuario.setNome_usuario(request.getParameter("nomeUsuario"));
+                        objCadastroUsuario.setFone_usuario(Integer.parseInt(request.getParameter("foneUsuario")));//pesquisar se o get é esse mesmo
+                        objCadastroUsuario.setEmail_usuario(request.getParameter("emailUsuario"));
+                        objCadastroUsuario.setSenha_usuario(Integer.parseInt(request.getParameter("senhaUsuario")));
+                        //objCadastroUsuario.setSenha_confirme(Integer.parseInt(request.getParameter("senhaConfirme")));
 
+                                //instacia do objeto da classe insertDAO 
+                                InsertDAO objetoInserido = new InsertDAO();
+
+                    //enviar a informação obtida pelo getParameter para  a classe insertDAO, e aplicar o metodo insertBD()
+                    objetoInserido.insertUsuario(objCadastroUsuario);
+
+                    
+
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(ServletControler.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ServletControler.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //retornar a pagina Cadastrar.html
+                cadastroUsuario(request,response);
+                
+                               
+            }
+       
+            //executar a inserção dos dados da pagina cadastrar.html no banco de dados
+            if(action.equals("/ControlerProduto")){
+                try{
+                    CadastroProdutos objProduto = new CadastroProdutos();
+                    objProduto.setNome_produto(request.getParameter("nomeProduto"));
+                    objProduto.setModelo_produto(request.getParameter("modeloProduto"));
+                    objProduto.setTecnologia_produto(request.getParameter("RadioDefaulttec"));
+                    objProduto.setPotência_produto(Integer.parseInt(request.getParameter("potenciaPlaca")));
+                    objProduto.setQuantidade_produto(Integer.parseInt(request.getParameter("qtdProduto")));
+                    objProduto.setLargura_placa(Integer.parseInt(request.getParameter("larguraPlaca")));
+                    objProduto.setAltura_placa(Integer.parseInt(request.getParameter("alturaPlaca")));
+                    objProduto.setPeso_placa(Integer.parseInt(request.getParameter("pesoPlaca")));
+
+                    InsertDAO produtoInserido = new InsertDAO();
+                    produtoInserido.insertProduto(objProduto);
+
+                    produto(request, response);
+
+                }catch(ClassNotFoundException ex){
+                  Logger.getLogger(ServletControler.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ServletControler.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                //teste de retorno da condicional 
+                /*try ( PrintWriter out = response.getWriter()){
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<title>Servlet ServletControler</title>");            
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.println("<h1> Deu certo!</h1>");
+                    out.println("</body>");
+                    out.println("</html>");
+                }*/
+                
+            }
+            
+                    
+    }
+    
     /**
      * Returns a short description of the servlet.
      *
@@ -134,4 +174,14 @@ public class ServletControler extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    
+    protected void produto(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        response.sendRedirect("produtos.jsp");
+    }
+    
+    protected void cadastroUsuario(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        response.sendRedirect("cadastrar.html");
+    }
+    
+    
 }

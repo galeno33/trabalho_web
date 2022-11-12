@@ -1,5 +1,11 @@
-<!DOCTYPE html>
+<%-- 
+    Document   : produtos
+    Created on : 12 de nov. de 2022, 17:17:11
+    Author     : MRFSolar
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Produtos</title>
@@ -23,6 +29,8 @@
         </div>
         
         <div class="container mt-3 secaoform col-5 col-md-4">
+            <h1>Pagina REDIMENCIONADA</h1>
+            
             <h3 class="calculocss">CADASTRO</h3>
                         
             <form action="ControlerProduto" method="post">
