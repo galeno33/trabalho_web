@@ -3,8 +3,14 @@
     Created on : 12 de nov. de 2022, 17:17:11
     Author     : MRFSolar
 --%>
-
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="packageCRUD.CadastroProdutos"%>
+<%@page import="packageDAO.SelectDAO"%>
+<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,13 +31,18 @@
                 <li>
                     <a href="index.html#orcamento">Faça seu Orçamento</a>
                 </li> 
+                <li>
+                    <a href="#cadastrarProdutos">Cadastrar produtos</a>
+                </li>
+                <li>
+                    <a href="#cadastrados">Produtos</a>
+                </li>
             </ul>
         </div>
         
         <div class="container mt-3 secaoform col-5 col-md-4">
-            <h1>Pagina REDIMENCIONADA</h1>
             
-            <h3 class="calculocss">CADASTRO</h3>
+            <h3 id="cadastrarProdutos" class="calculocss">CADASTRO</h3>
                         
             <form action="ControlerProduto" method="post">
                     <div class="mb-3">
@@ -92,45 +103,59 @@
                     </div>
                                              
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
-                       
                         
             </form>
-                        
-                        
-                        
+                                   
         </div>
         
-        <div class="container" id="tabela" style="margin-top: 60px;">
-            <h2>PRODUTOS CADASTRADOS</h2>
+       <div class="container" id="tabela" style="margin-top: 60px;">
+           <h2 id="cadastrados">PRODUTOS CADASTRADOS</h2>
             <br>
             <table class="table">
               <thead class="thead-dark">
                 <tr>
+                  <th>Id</th>
                   <th>Nome do Produto</th>
-                  <th>Capacidade KW/h</th>
+                  <th>Modelo</th>
+                  <th>Tecnologia</th>
+                  <th>Potência</th>                 
                   <th>Quantidade</th>
-                  <th>Tamanho</th>
+                  <th>Largura</th>
+                  <th>Altura</th>
+                  <th>Peso</th>
                 </tr>
               </thead>
+              
               <tbody>
-                <tr>
-                  <td>Placa solar</td>
-                  <td>74.5</td>
-                  <td>20</td>
-                  <td>1,50</td>
-                </tr>
-                <tr>
-                  <td>Placa solar</td>
-                  <td>70.5</td>
-                  <td>50</td>
-                  <td>1,50</td>
-                </tr>
-                <tr>
-                  <td>Placa solar</td>
-                  <td>90</td>
-                  <td>10</td>
-                  <td>2.00</td>
-                </tr>
+                 <%
+                    SelectDAO select = new SelectDAO();
+                    ArrayList<CadastroProdutos> lista = select.BuscarProduto();
+                    
+                    Iterator<CadastroProdutos> iterat = lista.iterator();
+                    
+                    //for(CadastroProdutos p: lista){
+                    while(iterat.hasNext()){
+                     CadastroProdutos  p=iterat.next();
+                %>
+                 
+                        <tr>
+                            <td><%=p.getId_produto()%></td>
+                            <td><%=p.getNome_produto()%></td>
+                            <td><%=p.getModelo_produto()%></td>
+                            <td><%=p.getTecnologia_produto()%></td>
+                            <td><%=p.getPotência_produto()%></td>
+                            <td><%=p.getQuantidade_produto()%></td>
+                            <td><%=p.getLargura_placa()%></td>
+                            <td><%=p.getAltura_placa()%></td>
+                            <td><%=p.getPeso_placa()%></td>
+
+                        </tr>
+                  
+                        
+                <% 
+                    }
+                %>
+                        
               </tbody>
             </table>
             

@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+//import java.util.List;
 import javax.swing.JOptionPane;
 import packageCRUD.CadastroProdutos;
 
@@ -18,32 +20,27 @@ public class SelectDAO {
     Connection conn;
     PreparedStatement pstm;
     ResultSet res; 
-    ArrayList<CadastroProdutos> lista = new ArrayList<>();
-    
-    
+   
     public ArrayList<CadastroProdutos>BuscarProduto() throws SQLException{
-        String sqlSelect = "select nome_produtos,"
-                           + " modelo_produtos,"
-                           + " tecnologia_produtos,"
-                           + "potencia_produtos,"
-                           + "qrd_produtos,"
-                           + "largura_produto,"
-                           + "altura_produto," 
-                           + "peso_produto"
-                           + "from produtos";
+      ArrayList<CadastroProdutos> lista = new ArrayList<>();  
         
-        conn = new conexaoDAO().conexaoBD();
+        String sqlSelect = "select * from produtos";
+    
         
        try{
            
+           conn = new conexaoDAO().conexaoBD();
            pstm = conn.prepareStatement(sqlSelect);
            res = pstm.executeQuery();
            
            //res.next() é um laço enquanto tiver linha repete a linha
            while(res.next()){
                
+               //instacia da classe CadastroProdutos
                CadastroProdutos objProduto = new CadastroProdutos();
+               
                //setar o nome do produto e atribuir o dados vindo do banco de dados
+               objProduto.setId_produto(res.getInt("id"));
                objProduto.setNome_produto(res.getString("nome_produtos"));
                objProduto.setModelo_produto(res.getString("modelo_produtos"));
                objProduto.setTecnologia_produto(res.getString("tecnologia_produtos"));
@@ -62,7 +59,7 @@ public class SelectDAO {
        } catch (SQLException erro){
            JOptionPane.showMessageDialog(null, "SelectDAO select: " + erro);
        }
-       
+   
        return lista;
     }
     

@@ -7,6 +7,7 @@ package packageCRUD;
 
 public class CadastroProdutos {
     
+    private int id_produto;
     private String nome_produto;
     private String modelo_produto;
     private String Tecnologia_produto;
@@ -16,6 +17,16 @@ public class CadastroProdutos {
     private int altura_placa;
     private int peso_placa;
 
+    public int getId_produto() {
+        return id_produto;
+    }
+
+    public void setId_produto(int id_produto) {
+        this.id_produto = id_produto;
+    }
+
+    
+    
     public String getNome_produto() {
         return nome_produto;
     }

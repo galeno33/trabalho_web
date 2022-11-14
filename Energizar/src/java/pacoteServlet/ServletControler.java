@@ -6,10 +6,12 @@ package pacoteServlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +20,14 @@ import javax.servlet.http.HttpServletResponse;
 import packageCRUD.CadastroProdutos;
 import packageCRUD.CadastroUsuario;
 import packageDAO.InsertDAO;
+import packageDAO.SelectDAO;
+import packageDAO.conexaoDAO;
 
-@WebServlet(name = "ServletControler", urlPatterns = {"/ServletControler", "/ControlerProduto", "/ControlerUsuario"})
+
+@WebServlet(name = "ServletControler", urlPatterns = {"/ServletControler",
+                                                      "/ControlerProduto",
+                                                      "/ControlerUsuario",
+                                                      "/produtos"})
 public class ServletControler extends HttpServlet {
 
     /**
@@ -31,6 +39,15 @@ public class ServletControler extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+   
+    
+    
+    
+    conexaoDAO daoConn = new conexaoDAO();
+    SelectDAO dao = new SelectDAO();
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -49,28 +66,24 @@ public class ServletControler extends HttpServlet {
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        /*try {
+            //processRequest(request, response);
+            
+            listarProdutos(request, response);*/
+            String action = request.getServletPath(); 
+            
+            if(action.equals("/produtos")){
+            produto(request, response);
+            }
+       /* } catch (SQLException ex) {
+            Logger.getLogger(ServletControler.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -164,11 +177,7 @@ public class ServletControler extends HttpServlet {
                     
     }
     
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    
     @Override
     public String getServletInfo() {
         return "Short description";
@@ -183,5 +192,17 @@ public class ServletControler extends HttpServlet {
         response.sendRedirect("cadastrar.html");
     }
     
+    //metodo responsavel por enviar lista de dados do banco de dados
+    protected void listarProdutos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException{
+        
+        
+        //ArrayList<CadastroProdutos> lista = (ArrayList<CadastroProdutos>) dao.BuscarProduto();
+        //encaminhar a lista
+        //request.setAttribute("lista", lista);
+        //RequestDispatcher requis = request.getRequestDispatcher("produtos.jsp");
+        
+        //requis.forward(request, response);
+        
+    }
     
 }
