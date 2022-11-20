@@ -7,12 +7,12 @@ function mostrarSenha() {
     var senha = document.getElementById("senha");
     var confirme = document.getElementById("confirme");
     
-    if (senha.type == "password" || confirme.type == "password") {
+    if (senha.type == "password") {
         senha.type = "text";
-         confirme.type = "text";
+        
     } else {
         senha.type = "password";
-        confirme.type = "password";
+        
     }
 }
 

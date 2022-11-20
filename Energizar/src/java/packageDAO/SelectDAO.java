@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package packageDAO;
 
 import java.sql.Connection;
@@ -13,6 +10,7 @@ import java.util.ArrayList;
 //import java.util.List;
 import javax.swing.JOptionPane;
 import packageCRUD.CadastroProdutos;
+import packageCRUD.CadastroUsuario;
 
 
 public class SelectDAO {
@@ -20,13 +18,14 @@ public class SelectDAO {
     Connection conn;
     PreparedStatement pstm;
     ResultSet res; 
+    //int retorn = 0;
+    //CadastroUsuario usu = new CadastroUsuario();
    
     public ArrayList<CadastroProdutos>BuscarProduto() throws SQLException{
       ArrayList<CadastroProdutos> lista = new ArrayList<>();  
-        
+        //variavel de busca no banco de dados
         String sqlSelect = "select * from produtos";
     
-        
        try{
            
            conn = new conexaoDAO().conexaoBD();
@@ -52,10 +51,7 @@ public class SelectDAO {
                
                lista.add(objProduto);  
            }
-           
-           //conn.close();
-           
-           
+    
        } catch (SQLException erro){
            JOptionPane.showMessageDialog(null, "SelectDAO select: " + erro);
        }
@@ -63,6 +59,5 @@ public class SelectDAO {
        return lista;
     }
     
-    
-    
+   
 }

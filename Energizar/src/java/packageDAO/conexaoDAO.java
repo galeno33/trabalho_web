@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author galeno
+ * @author MRFSolar
  */
 public class conexaoDAO {
     

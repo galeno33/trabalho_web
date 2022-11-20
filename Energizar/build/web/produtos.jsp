@@ -25,17 +25,13 @@
         <div id="navigation-container">
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
-                </li>
-
-                <li>
-                    <a href="index.html#orcamento">Faça seu Orçamento</a>
-                </li> 
-                <li>
-                    <a href="#cadastrarProdutos">Cadastrar produtos</a>
+                    <a href="funcionario.html">Home</a>
                 </li>
                 <li>
-                    <a href="#cadastrados">Produtos</a>
+                    <a href="Orcamentos.jsp">Orçamento</a>
+                </li>
+                <li>
+                    <a href="listarProdutos.jsp">Produtos Cadastrados</a>
                 </li>
             </ul>
         </div>
@@ -108,7 +104,7 @@
                                    
         </div>
         
-       <div class="container" id="tabela" style="margin-top: 60px;">
+       <!--<div class="container" id="tabela" style="margin-top: 60px;">
            <h2 id="cadastrados">PRODUTOS CADASTRADOS</h2>
             <br>
             <table class="table">
@@ -126,40 +122,40 @@
                 </tr>
               </thead>
               
-              <tbody>
+              <tbody>------->
                  <%
-                    SelectDAO select = new SelectDAO();
+                  /*  SelectDAO select = new SelectDAO();
                     ArrayList<CadastroProdutos> lista = select.BuscarProduto();
                     
                     Iterator<CadastroProdutos> iterat = lista.iterator();
                     
                     //for(CadastroProdutos p: lista){
                     while(iterat.hasNext()){
-                     CadastroProdutos  p=iterat.next();
+                     CadastroProdutos  p = iterat.next();*/
                 %>
                  
-                        <tr>
-                            <td><%=p.getId_produto()%></td>
-                            <td><%=p.getNome_produto()%></td>
-                            <td><%=p.getModelo_produto()%></td>
-                            <td><%=p.getTecnologia_produto()%></td>
-                            <td><%=p.getPotência_produto()%></td>
-                            <td><%=p.getQuantidade_produto()%></td>
-                            <td><%=p.getLargura_placa()%></td>
-                            <td><%=p.getAltura_placa()%></td>
-                            <td><%=p.getPeso_placa()%></td>
+                      <!--  <tr>
+                            <td><%//=p.getId_produto()%></td>
+                            <td><%//=p.getNome_produto()%></td>
+                            <td><%//=p.getModelo_produto()%></td>
+                            <td><%//=p.getTecnologia_produto()%></td>
+                            <td><%//=p.getPotência_produto()%></td>
+                            <td><%//=p.getQuantidade_produto()%></td>
+                            <td><%//=p.getLargura_placa()%></td>
+                            <td><%//=p.getAltura_placa()%></td>
+                            <td><%//=p.getPeso_placa()%></td>
 
-                        </tr>
+                        </tr>-------->
                   
                         
                 <% 
-                    }
+                  //  }
                 %>
                         
-              </tbody>
+           <!----   </tbody>
             </table>
             
-          </div>
+          </div>----------->
         
         <footer>
             <p> Equipe MRF solar<br>

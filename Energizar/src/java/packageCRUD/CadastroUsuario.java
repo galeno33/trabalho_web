@@ -3,12 +3,21 @@ package packageCRUD;
 
 public class CadastroUsuario {
     
+    private int id;
     private String nome_usuario;
     private int fone_usuario;
     private String email_usuario;
     private int senha_usuario;
     private int senha_confirme;
-    
+    private String status;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
     public int getSenha_confirme() {
         return senha_confirme;
@@ -50,6 +59,14 @@ public class CadastroUsuario {
 
     public void setSenha_usuario(int senha_usuario) {
         this.senha_usuario = senha_usuario;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     
     
